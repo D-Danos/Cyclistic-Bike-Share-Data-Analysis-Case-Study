@@ -41,6 +41,7 @@ WHERE ride_id IS NULL;
         HAVING COUNT(ride_id) <> 1
         ORDER BY count_of_ride_id DESC;
         --Result: 0 results, they all unique. All ride_id values have COUNT(ride_id)=1
+        --OK.
 
 	--Check if length 16:
 		--Query:
@@ -52,6 +53,7 @@ WHERE ride_id IS NULL;
         HAVING LENGTH(ride_id) <> 16
         ORDER BY length_of_ride_id DESC;
 		--Result: 0 results, they all of length 16. All ride_id values have LENGTH(ride_id)=16
+        --OK.
 
 	--Check if HEX:
 		--Query - Return all non HEX ride_id:
@@ -62,12 +64,13 @@ WHERE ride_id IS NULL;
         WHERE
             ride_id ~ '[^0-9a-fA-F]'; --we use regular expressions. Pattern for HEX is 0-9 and a-f or A-F. ^ is for any characters NOT matching the 0-9a-fA-F pattern.
 		--Result: 0 results, they all contain HEX characters.
+        --OK
 
 	--Alter the Datatype: Set as primary and VARCHAR(16)	
         ALTER TABLE bike_pre
         ALTER COLUMN ride_id TYPE VARCHAR(16),
         ADD PRIMARY KEY (ride_id);
-	--Result: Has been set to Varchar(16) as they all have LENGTH 16, and have set it as a primary key
+	--Result: Has been set to VARCHAR(16) as they all have LENGTH 16, and have set it as a primary key
 	
     --DONE. ride_id has been checked: no issues found. (Confirmed as unique identifier,of length 16,and HEX, no NULL).
 
@@ -100,8 +103,8 @@ WHERE ride_id IS NULL;
         GROUP BY member_casual
     --Result: all docked bikes are from casual members.
 
-    --Note: Some records for casuals, don't describe the type of biked used but just docked_bike. We are not going to
-    --treat those but we will keep it in mind for our later analysis for rideable_types.
+    --Note: Some records for casuals, don't describe the type of biked used but just docked_bike.
+    --Will keep it in mind for our later analysis for rideable_types.
 
     --DONE. Are either electric (electric_bike),classic (classic_bike), or undefined (docked_bike). No NULL values.
 
@@ -117,7 +120,9 @@ WHERE ride_id IS NULL;
 	--Result:"2023-01-01 00:01:58"	"2023-12-31 23:59:38"	"2023-01-01 00:02:41"	"2024-01-01 23:50:51"
 
 	--DONE FOR NOW. No issues with the range of datetime data as start_at is within 2023. Max of ended at can be from 2024: 
-    --the records are for when ride started. Some started_at values are before ended_at. We will check for that on part 3 
+    --the records are for when ride started. 
+    
+    --Some started_at values are before ended_at. We will check for that on part 3 
     --when we are going to create ride_duration.
 
 
@@ -231,8 +236,9 @@ WHERE ride_id IS NULL;
             WHERE 
                 start_station_name LIKE '% (Temp)' OR
                 end_station_name LIKE '% (Temp)';
-            --Result: even after doing this cleaning we can see that station_id - station names have matches to different
-            --stations. We would need to ask for station -id validations to clean those.
+            --Result: even after doing this cleaning we can see that station_id - station names have matches to different stations. 
+            
+            --We have no list nor number of stations and their respective ids, to crosscheck the values making it impossible to clean, as even the ids don't match to unique stations. 
             
             --Thankfully, stations names and ids are not a part of our analysis, so don't need to be cleaned further
             --(though still makes the data look less reliable).
@@ -288,8 +294,8 @@ WHERE ride_id IS NULL;
 --SUMMARY for columns: 
     --ride_id: No issues found. Has been set to VARCHAR(16), primary key.
     --rideable_type: Types of rideable vehicle used for the trip (classic_bike,electric_bike,docked_bike).
-    --started_at: Within range. Some end before starting. Will look again in 3.SQL_Create_new_columns_for_later_analysis.
-    --ended_at: Within range. Some end before starting. Will look again in 3.SQL_Create_new_columns_for_later_analysis.
+    --started_at: Within range. Some end before starting. Will check again in 3.SQL_Create_new_columns_for_later_analysis.
+    --ended_at: Within range. Some end before starting. Will check again in 3.SQL_Create_new_columns_for_later_analysis.
     --start_station_name: Many typos. Station name can match to more than one id. Has NULL values.
     --start_station_id: Same station id can much to more than one station. Has NULL values.
     --end_station_name: Many typos. Station name can match to more than one id. Has NULL values.
@@ -303,17 +309,12 @@ WHERE ride_id IS NULL;
 	--Incomplete:
 		--Rows are some times incomplete, and have missing values for end start information.
 	--Reliability issues:
-		--Some rides seem to end before starting which seems unreliable. We going to tackle this issue in the next file 3.SQL_Create_new_columns_for_later_analysis where we going to create durations
+		--Some rides seem to end before starting which. We going to tackle this issue in the next file 3.SQL_Create_new_columns_for_later_analysis where we going to create ride_duration.
 	--Names of stations have errors, and no actual station info was provided to validate.  
 	--Station ids are not always unique to the station, and have many different formats (ex. some had 3 numbers some had 5)
 	--Locations had three 0.0 values. Cleaned
 	
-        --start_station_name:875716 NULL values
-    --start_station_id:875848 NULL values
-    --end_station_name:929202 NULL values
-    --end_station_id:929343 NULL values
-    --end_lat:6990 NULL values
-    --end_lng:6990 NULL values
+
 --CONCLUSIONS
     --We need to look further into started_at,ended_at. Will do so in the next part: 3.SQL_Create_new_columns_for_later_analysis.
     --While start_station_name,end_station_name,start_station_id,end_station_id have issues, they are not part of our analysis.
