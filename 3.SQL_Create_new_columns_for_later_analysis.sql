@@ -3,7 +3,7 @@
 	--day_of_the_week (in "Mon","Tue",... format)
 	--month ('Jan','Feb',... format)
 
---ADD ride_ride_duration column (total ride_duration of ride in min):
+--ADD ride_duration column (total ride_duration of ride in min):
 	--ALTER TABLE - ADD COLUMN:
 	ALTER TABLE bike_pre
 	ADD COLUMN ride_duration DECIMAL(10, 2);
@@ -45,7 +45,7 @@ ON bike_pre (started_at);
 	--DONE.
 
 
---Create month column ('JAN','FEB',... format)
+--Create month column ('Jan','Feb',... format)
 	--ALTER TABLE - ADD COLUMN:
 	ALTER TABLE bike_pre
 	ADD COLUMN month VARCHAR(3);

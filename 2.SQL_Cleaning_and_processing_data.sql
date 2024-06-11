@@ -309,7 +309,7 @@ WHERE ride_id IS NULL;
 	--Incomplete:
 		--Rows are some times incomplete, and have missing values for end start information.
 	--Reliability issues:
-		--Some rides seem to end before starting which. We going to tackle this issue in the next file 3.SQL_Create_new_columns_for_later_analysis where we going to create ride_duration.
+		--Some rides seem to end before starting. We going to tackle this issue in the next file 3.SQL_Create_new_columns_for_later_analysis where we going to create ride_duration.
 	--Names of stations have errors, and no actual station info was provided to validate.  
 	--Station ids are not always unique to the station, and have many different formats (ex. some had 3 numbers some had 5)
 	--Locations had three 0.0 values. Cleaned
