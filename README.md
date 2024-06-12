@@ -1,4 +1,5 @@
 <h1>Cyclistic Bike-Share Data Analysis Case Study</h1>
+<u><b>Tools:</b>PostgreSQL,Python libraries: numpy,pandas,matplotlib,os, Other libraries supplementary used:sqlalchemy (import data),scipy.stats (trimmed mean)<u><br>
 <h2>Introduction</h2>
 Cyclistic is a bike-sharing program in Chicago, offering various types of bicycles and docking stations. This case study focuses on analyzing Cyclistic bike-share data to improve marketing strategies and <span style="color:red"><b>increase the number of annual members by converting casual members into annual members</b></span>.
 <h3>People Involved</h3>
@@ -7,14 +8,19 @@ Cyclistic is a bike-sharing program in Chicago, offering various types of bicycl
 <li><b>Cyclistic Marketing Analytics Team:</b> Our team of data analysts working to guide the marketing strategy.</li>
 <li><b>Cyclistic Executive Team:</b> The executive team responsible for deciding whether to approve the recommended marketing program.</li>
 </ul>
-<h3>Options Available</h3>
+<h3>Ride Options Available:</h3>
 <ul>
 <li>Single ride passes (<em>casual members</em>)</li>
 <li>Full-day passes (<em>casual members</em>)</li>
 <li>Annual memberships (<em>annual members</em>)</li>
 </ul>
 <h2>Goals</h2>
-<div class="alert alert-block alert-success"><em><b>Maximize the number of annual members by converting casual riders to annual members</b></em>, as annual members are much more profitable than casual riders.</div>
+<div class="alert alert-block alert-success">
+<ul>
+<li><em><b>Maximize the number of annual members by converting casual riders to annual members</b></em>, as annual members are much more profitable than casual riders.</li>
+<li><em><b>Understand how casual riders and annual members use Cyclistic bikes differently.</b></em></li>
+</ul>
+</div>
 <h3>Guiding Questions</h3>
 <ol>
 <li>How do casual riders use Cyclistic bikes differently compared to annual members?</li>
@@ -67,12 +73,11 @@ Cyclistic is a bike-sharing program in Chicago, offering various types of bicycl
 <h3><b>Tables</b></h3>
 <ul>
 <li><code>bike_raw</code>: Table saved as imported from CSV files.</li>
-<li><code>bike_pre</code>: Created from <code>bike_raw</code> - table to be preprocessed and cleaned.</li>
-<li><code>bike_edit</code>: Created from <code>bike_pre</code> - after cleaning and processing, new columns will be created for later analysis.</li>
-<li><code>bike_ready</code>: Created from <code>bike_edit</code> after creating columns - data ready to be imported for analysis in Python.</li>
+<li><code>bike_pre</code>: Created from <code>bike_raw</code> - table to be preprocessed and cleaned. After cleaning and preprocessing, new columns will be created for later analysis.</li>
+<li><code>bike_data</code>: Created from <code>bike_pre</code> after all cleaning is done and needed columns have been added. - data ready to be imported for analysis in Python.</li>
 </ul>
 <h2>Part 2: Python</h2>
-<p>All code is in the notebook <code>Python_Cyclistic_bike-share_data_analysis.ipynb</code> <em>(See repository)</em>.</p>
+<p>The python code is contained within <code>Python_Cyclistic_bike-share_data_analysis.ipynb</code> notebook. Includes a brief recap of the data and cleaning process done, a table of contents, importing the data in a Dataframe, and the Exploratory Data Analysis (EDA).<em>(See repository)</em>.</p>
 <p><mark>Note:</mark> <em><b>If you want to jump straight to the analysis without doing the SQL part, there is an alternative version using an already cleaned CSV within the file.</b></em> <a href="https://divvy-tripdata.s3.amazonaws.com/index.html">Download the cleaned data here</a>.</p>
 <h2>Part 3: Presentation</h2>
-<p>Share the results of the analysis in a presentation. The presentation <code>Presentation_Cyclistic_bike-share_data_analysis</code> <em>(See repository)</em>.</p>
+<p>Share key findings, conclusion and suggestions:<code>Presentation_Cyclistic_bike-share_data_analysis</code> <em>(See repository)</em>.</p>
