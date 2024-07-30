@@ -1,5 +1,12 @@
 <h1>Cyclistic Bike-Share Data Analysis Case Study</h1>
 <u><b>Tools:</b>PostgreSQL,Python libraries: numpy,pandas,matplotlib,os, Other libraries supplementary used:sqlalchemy (import data),scipy.stats (trimmed mean)<u><br>
+<br>
+Contains: 
+<ol>
+<li><b>powerpoint</b> with the <em>results of the analysis.</em></li>
+<li><b>.ipynb file</b> with the <em>python code.</em></li>
+<li><b>.sql files</b> for the <em>postgreSQL database setup and data cleaning</em></li>
+<li><b>.csv file</b>, in case you want to <em> jump straight to the python code without creating the SQL database - datacleaning steps.</em></li>
 <h2>Introduction</h2>
 Cyclistic is a bike-sharing program in Chicago, offering various types of bicycles and docking stations. This case study focuses on analyzing Cyclistic bike-share data to improve marketing strategies and <span style="color:red"><b>increase the number of annual members by converting casual members into annual members</b></span>.
 <h3>People Involved</h3>
@@ -78,6 +85,6 @@ Cyclistic is a bike-sharing program in Chicago, offering various types of bicycl
 </ul>
 <h2>Part 2: Python</h2>
 <p>The python code is contained within <code>Python_Cyclistic_bike-share_data_analysis.ipynb</code> notebook. Includes a brief recap of the data and cleaning process done, a table of contents, importing the data in a Dataframe, and the Exploratory Data Analysis (EDA).<em>(See repository)</em>.</p>
-<p><mark>Note:</mark> <em><b>If you want to jump straight to the analysis without doing the SQL part, there is an alternative version using an already cleaned CSV within the file.</b></em> <a href="https://divvy-tripdata.s3.amazonaws.com/index.html">Download the cleaned data here</a>.</p>
-<h2>Part 3: Presentation</h2>
-<p>Share key findings, conclusion and suggestions:<code>Presentation_Cyclistic_bike-share_data_analysis</code> <em>(See repository)</em>.</p>
+<p><mark>Note:</mark> <em><b>If you want to jump straight to the analysis without doing the SQL part, there is an alternative version using an already cleaned CSV within the repository.
+<h2>Part 3: Results</h2>
+<p>Share key findings, conclusion and suggestions:<code>Cyclistic_Bikes_Results_Powerpoint.pptx</code> <em>(See repository)</em>.</p>
