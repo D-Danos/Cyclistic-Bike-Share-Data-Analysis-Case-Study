@@ -88,4 +88,4 @@ Cyclistic is a bike-sharing program in Chicago, offering various types of bicycl
 <p>The python code is contained within <code>Python_Cyclistic_bike-share_data_analysis.ipynb</code> notebook. Includes a brief recap of the data and cleaning process done, a table of contents, importing the data in a Dataframe, and the Exploratory Data Analysis (EDA).<em>(See repository)</em>.</p>
 <p><mark>Note:</mark> <em><b>Reminder: If you want to jump straight to the analysis without doing the SQL part, there is an alternative version <a href="https://drive.google.com/drive/folders/1BGqA6mrtbYebPOtenprS7C6yLArB9Swm?usp=drive_link">using this csv.</a>
 <h2>Part 3: Results</h2>
-<p>Share key findings, conclusion and suggestions:<code>Cyclistic_Bikes_Results_Powerpoint.pptx</code> <em>(See repository)</em>.</p>
+<p>Share key findings, conclusion and suggestions:<code>Cyclistic_Bikes_Results_Powerpoint.pptx</code>, or find the <em><a href="https://drive.google.com/drive/folders/1BGqA6mrtbYebPOtenprS7C6yLArB9Swm?usp=drive_link">Google Slide version here.</a></em>.</p>
