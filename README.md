@@ -1,5 +1,5 @@
 <h1>Cyclistic Bike-Share Data Analysis Case Study</h1>
-<u><b>Tools:</b>PostgreSQL,Python libraries: numpy,pandas,matplotlib,os, Other libraries supplementary used:sqlalchemy (import data),scipy.stats (trimmed mean)<u><br>
+<u><b>Tools:</b> PostgreSQL,Python libraries: numpy,pandas,matplotlib,os, Other libraries supplementary used:sqlalchemy (import data),scipy.stats (trimmed mean)<u><br>
 <br>
 Contains: 
 <ol>
